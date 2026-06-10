@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Plantilla de Cupón</title>
+    <style>
+        /* Configuración del lienzo para el PDF */
+        @page {
+            size: 18cm 11.5cm;
+            margin: 0;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #1a1a1a;
+            background-color: #fdfaf3;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Contenedor principal con paddings optimizados para evitar saltos de página */
+        .card {
+            border: 2px solid #1a1a1a;
+            background-color: #fdfaf3;
+            padding: 25px 40px 20px 40px;
+            width: 17cm;
+            margin: 0.4cm auto; 
+            box-sizing: border-box;
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        .title {
+            font-size: 34px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin: 0 0 5px 0;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 13px;
+            margin: 0 0 10px 0;
+            letter-spacing: 2px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        /* Tabla del encabezado (Canjeable por) */
+        .tabla-header {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+        
+        /* Estructura del cuerpo */
+        .tabla-datos {
+            width: 100%;
+        }
+        
+        .label {
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        /* El secreto de las líneas */
+        .linea-campo {
+            border-bottom: 1px solid #1a1a1a;
+            font-size: 16px;
+            padding-bottom: 3px;
+        }
+        
+        /* Estructura del pie de página */
+        .tabla-footer {
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        /* Estilos optimizados para los datos estáticos del local */
+        .datos-local {
+            font-family: 'Arial', sans-serif;
+            font-size: 10px;
+            color: #1a1a1a;
+            line-height: 1.4;
+            letter-spacing: 0.5px;
+            margin-top: 5px;
+        }
+        
+        /* CONTROL ABSOLUTO DEL SVG INLINE */
+        .logo-wrapper {
+            width: 140px;
+            height: auto;
+            display: block;
+        }
+        .logo-wrapper svg {
+            width: 100% !important;
+            height: auto !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        
+        <div class="center">
+            <h1 class="title">Invitación Especial</h1>
+            <p class="subtitle">Valido por:</p>
+        </div>
+        
+        <table class="tabla-header" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="linea-campo center" style="width: 100%;">
+                    {{canje_por}}
+                </td>
+            </tr>
+        </table>
+
+        <table class="tabla-datos" cellpadding="0" cellspacing="0">
+            <tr>
+                <td style="width: 12%; vertical-align: top; padding-top: 5px;">
+                    <span class="label">PARA:</span>
+                </td>
+                <td class="linea-campo" style="width: 88%; vertical-align: top; padding-top: 5px;">
+                    {{para}}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="height: 25px;"></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2" style="width: 100%; padding-top: 5px;">
+                    <table style="width: 100%;" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td style="width: 50%; vertical-align: top;">
+                                <span class="label">FECHA DE EMISIÓN:</span><br><br>
+                                <div class="linea-campo" style="width: 90%;">{{fecha_emision}}</div>
+                            </td>
+                            <td style="width: 50%; text-align: right; vertical-align: top;">
+                                <span class="label" style="display: block; text-align: right;">FECHA DE VENCIMIENTO:</span><br>
+                                <div class="linea-campo" style="width: 90%; margin-left: 10%; text-align: right;">{{fecha_vencimiento}}</div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <table class="tabla-footer" cellpadding="0" cellspacing="0" style="width: 100%;">
+            <tr>
+                <td style="width: 50%; vertical-align: bottom;">
+                    <div style="width: 140px; text-align: center;">
+                        <div class="logo-wrapper" style="margin: 0 auto; margin-top: 10px;">
+                            {{logo_svg}}
+                        </div>
+                        <div class="datos-local" style="text-transform: uppercase; font-size: 8.5px; font-weight: bold; letter-spacing: 0.8px; margin-top: 5px;">
+                            Almacén de Comidas<br>Vinería
+                        </div>
+                    </div>
+                </td>
+                
+                <td style="width: 50%; text-align: right; vertical-align: bottom;" class="label">
+                    <div style="margin-bottom: 12px;">
+                        Nº DE CUPÓN: 
+                        <span class="linea-campo" style="padding: 0 15px; margin-left: 5px; font-weight: normal;">
+                            {{codigo}}
+                        </span>
+                    </div>
+                    <div class="datos-local" style="font-weight: normal; font-style: normal;">
+                        <span>Capello 498, Esquina Azara, Banfield</span><br>
+                        <span style="display: inline-block; margin-top: 2px;">📸 @lacasavarietal</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+    </div>
+
+</body>
+</html>

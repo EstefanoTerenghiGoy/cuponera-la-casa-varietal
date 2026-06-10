@@ -1,0 +1,12 @@
+.vscode/
+
+build/
+dist/
+*.spec
+
+cupones-html/
+cupones-pdf/
+cupones.json
+
+Thumbs.db
+.DS_Store
