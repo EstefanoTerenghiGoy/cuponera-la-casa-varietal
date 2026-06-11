@@ -15,6 +15,10 @@ Este proyecto es un software de escritorio nativo, ligero y automatizado diseña
 * **Acciones de Control Dinámicas:** Botón de acción con lógica de *Toggle* para marcar como "Canjeado" o "Revertir a Activo". El texto del botón muta dinámicamente según la fila seleccionada.
 * **Persistencia Local:** Base de datos ligera en formato JSON (`cupones.json`) que no requiere de servidores externos.
 
+
+<img width="1920" height="1080" alt="Muestra de Cuponera" src="https://github.com/user-attachments/assets/0fe3667b-4661-4e23-92f9-bcb95253d0af" />
+
+
 ## Estructura del Proyecto
 
 ```text
