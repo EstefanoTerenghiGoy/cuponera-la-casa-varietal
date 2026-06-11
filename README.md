@@ -55,7 +55,7 @@ Si querés clonar este repositorio y ejecutarlo en modo desarrollo, seguí estos
    cd carpeta_raiz
 2. **Instala las dependencias requeridas:**
    ```bash
-   pip install tkcalendar playwrightgit
+   pip install -r requirements.txt
 3. **Descargá los binarios del navegador invisible:**
    ```bash
    python -m playwright install chromium

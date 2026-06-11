@@ -10,3 +10,5 @@ cupones.json
 
 Thumbs.db
 .DS_Store
+
+.venv
